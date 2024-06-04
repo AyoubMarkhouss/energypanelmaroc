@@ -1,0 +1,113 @@
+import notLed from "@/../public/piwpiw.jpg";
+import led from "@/../public/leddie.jpg";
+import img from "@/../public/sisi.jpg";
+import Image from "next/image";
+import { motion, useInView } from "framer-motion";
+import { container, item } from "@/lib/animation";
+import { useRef } from "react";
+import { MagicCard, MagicContainer } from "./ui/magic-card";
+import One from "@/../public/efi.webp";
+import Two from "@/../public/sola.webp";
+import Link from "next/link";
+import Call from "./icons/call";
+import Address from "./icons/address";
+const Content = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, {
+    once: false,
+    margin: "-100px 0px 0px 0px",
+  });
+  const cardsRef = useRef(null);
+  const cardsIsInView = useInView(cardsRef, { once: false });
+  return (
+    <div id="activité" ref={ref}>
+      <motion.div
+        variants={container}
+        initial="hidden"
+        animate={isInView ? "visible" : ""}
+        className="px-4 my-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20"
+      >
+        <div className="max-w-xl mb-10 md:mx-auto sm:text-center lg:max-w-2xl md:mb-12">
+          <motion.h2
+            variants={item}
+            className="max-w-lg mb-6 font-sans text-3xl font-bold leading-none tracking-tight text-gray-900 sm:text-4xl md:mx-auto"
+          >
+            Notre activité se concentre sur trois volets principaux
+          </motion.h2>
+        </div>
+        <div ref={cardsRef}>
+          <MagicContainer
+            className={"flex w-full md:flex-col gap-4 lg:flex-row"}
+          >
+            <motion.div
+              variants={container}
+              initial="hidden"
+              animate={cardsIsInView ? "visible" : ""}
+              className="grid md:grid-cols-3 grid-cols-1 gap-4"
+            >
+              {content.map((j) => {
+                return (
+                  <Link
+                    href={j.link}
+                    target="_blank"
+                    key={j.label}
+                    className=""
+                  >
+                    <MagicCard
+                      borderWidth={3}
+                      className="flex flex-col shrink-0 w-full cursor-pointer overflow-hidden bg-[radial-gradient(var(--mask-size)_circle_at_var(--mouse-x)_var(--mouse-y),#ffaa40_0,#9c40ff_50%,transparent_100%)] shadow-2xl"
+                    >
+                      <p className="text-2xl font-semibold text-center p-4">
+                        {j.label}
+                      </p>
+                      <div className="flex justify-center">
+                        <Image
+                          src={j.logo}
+                          alt="image"
+                          width={500}
+                          height={500}
+                          className="w-32"
+                        />
+                      </div>
+                      <Image
+                        src={j.image}
+                        alt="image"
+                        className="h-72 z-40 object-cover mt-auto"
+                        width={600}
+                        height={600}
+                      />
+                      <div className="pointer-events-none absolute inset-0 h-full bg-green/20" />
+                    </MagicCard>
+                  </Link>
+                );
+              })}
+            </motion.div>
+          </MagicContainer>
+        </div>
+      </motion.div>
+    </div>
+  );
+};
+
+export default Content;
+
+const content = [
+  {
+    image: img,
+    label: "Chauffe eau solaire",
+    logo: Two,
+    link: "https://www.novasolarmaroc.com/",
+  },
+  {
+    image: led,
+    label: "Éclairage LED",
+    logo: One,
+    link: "tel:0522663518",
+  },
+  {
+    image: notLed,
+    label: "Panneaux photovoltaïque",
+    logo: Two,
+    link: "https://www.novasolarmaroc.com/",
+  },
+];
