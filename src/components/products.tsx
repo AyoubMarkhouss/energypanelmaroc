@@ -101,9 +101,9 @@ const Products = () => {
                         className="w-32"
                       />
                     </div>
-                    <div className="mt-auto ml-20 md:ml-8 w-full pb-5">
+                    <div className="mt-auto w-full pb-5">
                       <Link
-                        className="h-full mt-auto w-full pb-24"
+                        className="h-full mt-auto flex justify-center items-center w-full pb-24"
                         target="_blank"
                         href={j.link}
                       >
