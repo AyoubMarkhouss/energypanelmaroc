@@ -102,7 +102,7 @@ const content = [
     image: led,
     label: "Éclairage LED",
     logo: One,
-    link: "tel:0522663518",
+    link: "tel:0666226690 ",
   },
   {
     image: notLed,
