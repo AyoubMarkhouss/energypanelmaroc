@@ -18,22 +18,12 @@ import Panneaux from "@/components/Panneaux";
 import Testo from "@/components/testo";
 import Contact from "@/components/contact";
 import Reference from "@/components/reference";
-import Head from "next/head";
 
 export default function Home() {
   const { toggleBoolean, booleanState } = useBooleanContext();
 
   return (
     <>
-      <Head>
-        <meta
-          name="description"
-          content="Fondée en 2016, Energy Panel Maroc est une entreprise pionnière sur le marché marocain dans le domaine des énergies renouvelables."
-        />
-        <link rel="icon" href="/logo.png" />
-        <title>Energy panel maroc</title>
-        <meta property="og:image" content="/logo.png" />
-      </Head>
       <main className={cn(booleanState ? "max-h-screen overflow-hidden" : "")}>
         <Navbar />
         <div className="z-20">
@@ -42,9 +32,8 @@ export default function Home() {
           <Service />
           <Products />
           <Images />
-
-          <Reference />
           <Testo />
+          <Reference />
           <Contact />
           <Footer />
         </div>

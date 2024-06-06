@@ -17,7 +17,7 @@ const Contact = () => {
         <div className="flex flex-col gap-2">
           <p className="text-xl flex gap-3 text-blue font-semibold">
             <Call className="w-6 fill-green" />
-             0522 66 35 18
+            +212666-226690
           </p>
           <p className="flex items-center gap-3 text-blue font-semibold">
             <Address className="w-6 fill-green" />

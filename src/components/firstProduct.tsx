@@ -1,16 +1,30 @@
-import notLed from "@/../public/piwpiw.jpg";
-import led from "@/../public/leddie.jpg";
-import img from "@/../public/sisi.jpg";
-import Image from "next/image";
-import { motion, useInView } from "framer-motion";
+import One from "@/../public/efi.webp";
+import firkiko from "@/../public/firkiko.jpg";
+import firsLed from "@/../public/firLed.jpg";
+import firvoya from "@/../public/firvoya.jpg";
+import forkiko from "@/../public/forkiko.jpg";
+import forthLed from "@/../public/forthLed.jpg";
+import forvoya from "@/../public/forvoya.jpg";
+import seckiko from "@/../public/seckiko.jpg";
+import secLed from "@/../public/secLed.jpg";
+import secvoya from "@/../public/secvoya.jpg";
+import Two from "@/../public/sola.webp";
+import thirdLed from "@/../public/thirdLed.jpg";
+import thirkiko from "@/../public/thirkiko.jpg";
+import thirvoya from "@/../public/thirvoya.jpg";
+import Autoplay from "embla-carousel-autoplay";
+
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+} from "@/components/ui/carousel";
 import { container, item } from "@/lib/animation";
+import { motion, useInView } from "framer-motion";
+import Image from "next/image";
+import Link from "next/link";
 import { useRef } from "react";
 import { MagicCard, MagicContainer } from "./ui/magic-card";
-import One from "@/../public/efi.webp";
-import Two from "@/../public/sola.webp";
-import Link from "next/link";
-import Call from "./icons/call";
-import Address from "./icons/address";
 const Content = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, {
@@ -69,13 +83,33 @@ const Content = () => {
                           className="w-32"
                         />
                       </div>
-                      <Image
-                        src={j.image}
-                        alt="image"
-                        className="h-72 z-40 object-cover mt-auto"
-                        width={600}
-                        height={600}
-                      />
+                      <div className="h-72 mt-auto z-40">
+                        <Carousel
+                          plugins={[
+                            Autoplay({
+                              delay: 2000,
+                            }),
+                          ]}
+                          opts={{
+                            loop: true,
+                          }}
+                          className="w-full"
+                        >
+                          <CarouselContent>
+                            {j.image.map((l, index) => (
+                              <CarouselItem key={index}>
+                                <Image
+                                  src={l}
+                                  alt="image"
+                                  className="h-72 w-full object-cover z-40"
+                                  width={600}
+                                  height={600}
+                                />
+                              </CarouselItem>
+                            ))}
+                          </CarouselContent>
+                        </Carousel>
+                      </div>
                       <div className="pointer-events-none absolute inset-0 h-full bg-green/20" />
                     </MagicCard>
                   </Link>
@@ -93,19 +127,19 @@ export default Content;
 
 const content = [
   {
-    image: img,
+    image: [firkiko, seckiko, thirkiko, forkiko],
     label: "Chauffe eau solaire",
     logo: Two,
     link: "https://www.novasolarmaroc.com/",
   },
   {
-    image: led,
+    image: [firsLed, secLed, thirdLed, forthLed],
     label: "Éclairage LED",
     logo: One,
-    link: "tel:0666226690 ",
+    link: "tel:0522663518",
   },
   {
-    image: notLed,
+    image: [firvoya, secvoya, thirvoya, forvoya],
     label: "Panneaux photovoltaïque",
     logo: Two,
     link: "https://www.novasolarmaroc.com/",

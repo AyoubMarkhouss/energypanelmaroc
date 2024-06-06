@@ -1,15 +1,31 @@
-import img from "@/../public/kiki.webp";
-import secondImage from "@/../public/love.webp";
-import firstImage from "@/../public/prodi.jpg";
+import One from "@/../public/efi.webp";
+import firkiko from "@/../public/firkiko.jpg";
+import firsLed from "@/../public/firLed.jpg";
+import firvoya from "@/../public/firvoya.jpg";
+import forkiko from "@/../public/forkiko.jpg";
+import forthLed from "@/../public/forthLed.jpg";
+import forvoya from "@/../public/forvoya.jpg";
+import seckiko from "@/../public/seckiko.jpg";
+import secLed from "@/../public/secLed.jpg";
+import secvoya from "@/../public/secvoya.jpg";
+import Two from "@/../public/sola.webp";
+import thirdLed from "@/../public/thirdLed.jpg";
+import thirkiko from "@/../public/thirkiko.jpg";
+import thirvoya from "@/../public/thirvoya.jpg";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 import { container, item } from "@/lib/animation";
 import { motion, useInView } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { useRef } from "react";
-import { MagicCard, MagicContainer } from "./ui/magic-card";
-import One from "@/../public/efi.webp";
-import Two from "@/../public/sola.webp";
 import Call from "./icons/call";
+import { MagicCard, MagicContainer } from "./ui/magic-card";
 const Products = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: false });
@@ -81,13 +97,28 @@ const Products = () => {
                     className="flex flex-col h-[32rem] w-full cursor-pointer overflow-hidden bg-[radial-gradient(var(--mask-size)_circle_at_var(--mouse-x)_var(--mouse-y),#ffaa40_0,#9c40ff_50%,transparent_100%)] shadow-2xl"
                   >
                     <div className="h-72 z-40">
-                      <Image
-                        src={j.image}
-                        alt="image"
-                        className="h-72 object-cover z-40"
-                        width={600}
-                        height={600}
-                      />
+                      <Carousel
+                        opts={{
+                          loop: true,
+                        }}
+                        className="w-full"
+                      >
+                        <CarouselContent>
+                          {j.image.map((l, index) => (
+                            <CarouselItem key={index}>
+                              <Image
+                                src={l}
+                                alt="image"
+                                className="h-72 w-full object-cover z-40"
+                                width={600}
+                                height={600}
+                              />
+                            </CarouselItem>
+                          ))}
+                        </CarouselContent>
+                        <CarouselPrevious />
+                        <CarouselNext />
+                      </Carousel>
                     </div>
                     <p className="text-2xl font-semibold text-center p-4">
                       {j.label}
@@ -101,9 +132,9 @@ const Products = () => {
                         className="w-32"
                       />
                     </div>
-                    <div className="mt-auto w-full pb-5">
+                    <div className="mt-auto ml-20 md:ml-8 w-full pb-5">
                       <Link
-                        className="h-full mt-auto flex justify-center items-center w-full pb-24"
+                        className="h-full mt-auto w-full pb-24"
                         target="_blank"
                         href={j.link}
                       >
@@ -129,19 +160,19 @@ export default Products;
 
 const content = [
   {
-    image: firstImage,
+    image: [firkiko, seckiko, thirkiko, forkiko],
     link: "https://www.novasolarmaroc.com/",
     label: "Chauffe eau solaire",
     logo: Two,
   },
   {
-    image: img,
+    image: [firsLed, secLed, thirdLed, forthLed],
     label: "Éclairage LED",
-    link: "tel:0666226690 ",
+    link: "tel:0522663518",
     logo: One,
   },
   {
-    image: secondImage,
+    image: [firvoya, secvoya, thirvoya, forvoya],
     label: "Panneaux photovoltaïque",
     link: "https://www.novasolarmaroc.com/",
     logo: Two,
