@@ -40,7 +40,7 @@ const Products = () => {
             variants={container}
             initial="hidden"
             animate={isInView ? "visible" : ""}
-            className="max-w-screen-sm sm:text-center sm:mx-auto"
+            className="max-w-screen-sm flex flex-col justify-center items-center sm:text-center sm:mx-auto"
           >
             <motion.div variants={item}>
               <Link
@@ -48,7 +48,7 @@ const Products = () => {
                 aria-label="View"
                 className="inline-block mb-5 rounded-full sm:mx-auto"
               >
-                <div className="flex items-center justify-center w-16 h-16 mb-4 rounded-full bg-indigo-50">
+                <div className="flex items-center justify-center w-16 h-16 rounded-full bg-indigo-50">
                   <svg
                     className="w-12 h-12 text-blue"
                     stroke="currentColor"

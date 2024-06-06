@@ -13,7 +13,7 @@ const Service = () => {
     <div
       id="references"
       ref={ref}
-      className="px-4 relative bg-blue/20 md:rounded-xl py-16 mx-auto sm:max-w-xl z-20 md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20"
+      className="px-4 relative bg-blue/20 md:rounded-xl py-16 mb-16 mx-auto sm:max-w-xl z-20 md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20"
     >
       <div className="w-56 hidden md:block animate-blob animate-delay-4000 h-56 rounded-full absolute bg-blue -left-10 -top-7 mix-blend-multiply filter blur-xl opacity-50 -z-20" />
       <div className="w-56 hidden md:block animate-blob h-56 rounded-full absolute bg-green left-24 -top-7 mix-blend-multiply filter blur-xl opacity-50 -z-20" />
@@ -26,7 +26,7 @@ const Service = () => {
         variants={container}
         initial="hidden"
         animate={isInView ? "visible" : ""}
-        className="max-w-xl  mb-10 md:mx-auto sm:text-center lg:max-w-2xl md:mb-12"
+        className="max-w-xl  mb-10 md:mx-auto text-center lg:max-w-2xl md:mb-12"
       >
         <div>
           <motion.p

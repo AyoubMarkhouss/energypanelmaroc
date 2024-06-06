@@ -24,7 +24,7 @@ const Images = () => {
   return (
     <div
       ref={ref}
-      className="flex max-w-3xl mx-auto overflow-hidden mb-10 flex-col mt-[3rem] items-center md:mt-40"
+      className="flex max-w-3xl mb-28 mx-auto overflow-hidden flex-col mt-[3rem] items-center md:mt-40"
       id="ref"
     >
       <div className="bg-indigo-50 w-16 h-16 rounded-full flex justify-center items-center">
