@@ -4,7 +4,10 @@ import Address from "./icons/address";
 
 const Contact = () => {
   return (
-    <div className="mb-24 flex flex-col px-5 md:flex-row max-w-7xl md:items-center md:justify-center gap-10 md:mx-auto">
+    <div
+      className="mb-24 flex flex-col px-5 md:flex-row max-w-7xl md:items-center md:justify-center gap-10 md:mx-auto"
+      id="contact"
+    >
       <div className="flex flex-col gap-5">
         <div className="flex flex-col gap-2">
           <h3 className="text-2xl text-green font-bold">Contactez-nous</h3>
@@ -17,7 +20,7 @@ const Contact = () => {
         <div className="flex flex-col gap-2">
           <p className="text-xl flex gap-3 text-blue font-semibold">
             <Call className="w-6 fill-green" />
-            +212666-226690
+            0522663518
           </p>
           <p className="flex items-center gap-3 text-blue font-semibold">
             <Address className="w-6 fill-green" />

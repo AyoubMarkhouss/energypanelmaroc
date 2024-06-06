@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { Link as WithScroll } from "react-scroll";
-import { MdInfoOutline } from "react-icons/md";
+import { MdInfoOutline, MdPhone } from "react-icons/md";
 import { MdSolarPower } from "react-icons/md";
 import Logo from "@/../public/logo.png";
 import { useBooleanContext } from "@/utils/context";
@@ -18,6 +18,7 @@ import {
 } from "react-scroll";
 import { useRouter } from "next/router";
 import SecArrow from "./icons/secArrow";
+import Call from "./icons/call";
 export function Navbar() {
   const { toggleBoolean, booleanState, sectionName } = useBooleanContext();
   const nav = useRouter().pathname;
@@ -127,6 +128,8 @@ export function Navbar() {
                   </div>
                 </ScrollLink>
               </Link>
+              
+              
             );
           })}
         </div>
@@ -149,5 +152,11 @@ const content = [
     link: "certifications",
     icon: BsFillPeopleFill,
     id: "certifications",
+  },
+  {
+    label: "Contact",
+    link: "contact",
+    icon: MdPhone,
+    id: "contact",
   },
 ];
