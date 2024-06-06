@@ -59,7 +59,7 @@ export function Navbar() {
                     smooth={true}
                     spy={true}
                     duration={1500}
-                    offset={-220}
+                    offset={-170}
                     to={j.link}
                   >
                     <div
@@ -121,15 +121,13 @@ export function Navbar() {
                   spy={true}
                   smooth={true}
                   duration={1500}
-                  offset={-220}
+                  offset={0}
                 >
                   <div className="w-full cursor-pointer text-xl font-medium flex gap-4 items-center pr-7 pl-3 py-1 rounded">
                     <lobi.icon /> {lobi.label}
                   </div>
                 </ScrollLink>
               </Link>
-              
-              
             );
           })}
         </div>
@@ -143,9 +141,9 @@ const content = [
   { label: "Produits", link: "produit", icon: MdSolarPower, id: "product" },
   {
     label: "Références",
-    link: "references",
+    link: "ref",
     icon: FaPeopleArrows,
-    id: "references",
+    id: "ref",
   },
   {
     label: "Certifications",

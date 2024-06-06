@@ -26,14 +26,12 @@ const Images = () => {
     <div
       ref={ref}
       className="flex overflow-hidden flex-col mt-[5rem] items-center md:mt-40"
+      id="certifications"
     >
       <div className="bg-indigo-50 w-16 h-16 rounded-full flex justify-center items-center">
         <GrCertificate size={30} className="stroke-blue" />
       </div>
-      <h1
-        id="certifications"
-        className="mb-4 text-center mt-8 font-sans text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl sm:leading-none"
-      >
+      <h1 className="mb-4 text-center mt-8 font-sans text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl sm:leading-none">
         Nos Certifications
       </h1>
       <motion.hr variants={item} className="w-96 my-8 border-gray-300" />
